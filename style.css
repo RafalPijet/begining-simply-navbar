@@ -1,0 +1,90 @@
+body {
+    background-color: #a9a9a9;
+    font-family: "Rubik", sans-serif;
+}
+
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    background-color: #000000;
+    cursor: pointer;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #a9a9a9;
+    font-size: 28px;
+}
+
+li {
+    min-width: 200px;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+li:hover {
+    background-color: #444444;
+}
+
+li:hover > a {
+    color: #ffffff;
+}
+
+.horizontal-menu {
+    position: relative;
+    left: 100px;
+}
+
+.horizontal-menu li {
+    position: relative;
+    display: inline-block;
+    padding: 30px;
+}
+
+.horizontal-menu li:hover .vertical-menu {
+    transform: scaleY(1);
+}
+
+.vertical-menu {
+    position: absolute;
+    background-color: #000000;
+    top: 88px;
+    left: 0;
+    display: block;
+    box-shadow: 5px 5px 3px #636e72;
+    transform-origin: 50% 0%;
+    transform: scaleY(0);
+    transition: transform .1s;
+}
+
+.vertical-menu li:hover {
+    animation: selectLevelTwo 1s infinite;
+}
+
+.vertical-menu li:active {
+    animation: none;
+    transform: perspective(500px) translate3d(0px, 0px, -50px);
+    background-color: #f39c12;
+}
+
+@keyframes selectLevelTwo {
+    0% {
+        transform: perspective(500px) translate3d(0px, 0px, 0px);
+    }
+    50% {
+        transform: perspective(500px) translate3d(0px, 0px, -50px);
+    }
+    100% {
+        transform: perspective(500px) translate3d(0px, 0px, 0px);
+    }
+}
